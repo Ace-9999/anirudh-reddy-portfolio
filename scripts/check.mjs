@@ -1,14 +1,31 @@
-import { readFile, access } from 'node:fs/promises';
-const html = await readFile('dist/index.html', 'utf8');
-const ids = new Set([...html.matchAll(/id="([^"]+)"/g)].map(m => m[1]));
-const links = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map(m => m[1]);
-for (const link of links) {
-  if (link.startsWith('#') && !ids.has(link.slice(1))) throw Error(`Missing anchor ${link}`);
-  if (link.startsWith('/')) await access(`dist${link}`);
+import { readFile } from 'node:fs/promises';
+
+const origin = 'http://127.0.0.1:3000';
+const pages = new Map();
+for (const name of ['index.html', 'projects.html']) {
+  const html = await readFile('dist/' + name, 'utf8');
+  pages.set('/' + name, {
+    ids: new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1])),
+    links: [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map(match => match[1])
+  });
 }
-for (const file of ['/', '/styles.css', '/app.js', '/assets/anirudh-portrait.png', '/assets/Anirudh-Reddy-Resume.pdf', '/assets/favicon.svg']) {
-  const response = await fetch(`http://127.0.0.1:3000${file}`);
-  if (!response.ok) throw Error(`${file}: ${response.status}`);
-  console.log(`${response.status} ${file} (${response.headers.get('content-type')})`);
+const paths = new Set(['/','/projects.html']);
+for (const [name, page] of pages) {
+  for (const link of page.links) {
+    const url = new URL(link, origin + name);
+    if (url.origin !== origin) continue;
+    const target = url.pathname === '/' ? '/index.html' : url.pathname;
+    if (url.hash && !pages.get(target)?.ids.has(url.hash.slice(1))) {
+      throw Error('Missing anchor ' + link + ' on ' + name);
+    }
+    paths.add(url.pathname);
+  }
 }
-console.log('All local assets and internal anchors verified.');
+const css = await readFile('dist/styles.css', 'utf8');
+for (const match of css.matchAll(/url\(['"]?(\/assets\/[^'")]+)/g)) paths.add(match[1]);
+for (const path of paths) {
+  const response = await fetch(origin + path);
+  if (!response.ok) throw Error(path + ' returned ' + response.status);
+  await response.arrayBuffer();
+}
+console.log('Verified both pages, their anchors, and ' + paths.size + ' served paths.');

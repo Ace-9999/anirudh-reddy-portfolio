@@ -40,7 +40,7 @@ Alternatively, run `vercel` from this directory using an authenticated Vercel CL
 
 Google Fonts provides DM Sans and Manrope; local Arial and Georgia fallbacks keep the page usable when fonts are unavailable. All other assets are served locally. Copying the email requires a secure browser context (HTTPS or localhost), with a readable fallback message if unavailable. Reduced-motion preferences disable animations, tilt, and smooth scrolling. Content remains accessible without JavaScript.
 
-Project artwork is illustrative CSS composition, not screenshots of the applications. Public repository links point to CyberArena, HUB, and PulseBridge. Resume statements preserve in-progress and AI-assisted qualifications. Phone number is omitted from page copy but remains in the downloadable original résumé.
+The homepage highlights three projects. The full collection lives in projects.html. Project galleries use local repository images, and the K7 experience pairs the company wordmark with original illustrative artwork.
 
 ## Portrait treatment
 

@@ -181,3 +181,49 @@ a:focus-visible,button:focus-visible{outline-color:#a8c7ff}
 ::selection{background:#a9bbdc;color:#080809}
 @media(max-width:1000px) and (min-width:701px){h1{font-size:52px}}
 @media(max-width:700px){.hero:before{inset:30% 0 50px}.contact{border-radius:20px}}
+.featured-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.feature {display:block;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:#18181b}
+.feature:hover {border-color:#75758a}
+.feature-copy {padding:24px}
+.feature-copy .eyebrow,.archive-entry .eyebrow,.k7-copy .eyebrow {font-size:.78rem;letter-spacing:.09em;color:#c6c7d2;margin:0 0 12px}
+.feature-copy h3,.archive-entry h3 {font-size:1.6rem;line-height:1.2;margin:0 0 12px}
+.feature-copy p:last-child,.k7-copy>p:not(.eyebrow),.archive-entry p,.archive-heading>p:last-child,.architect-note p {color:#c0c0c9;margin-bottom:0}
+.feature-art {height:225px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:18px}
+.phones-art {gap:10px;align-items:flex-start;background:radial-gradient(ellipse at top,#575679,#242136);padding:25px 12px 0}
+.phones-art img {width:38%;max-width:118px;border:3px solid #252527;border-radius:14px;box-shadow:0 9px 22px #0005}
+.phones-art img+img {margin-top:25px}
+.study-art {background:linear-gradient(140deg,#3c4054,#22253a)}.study-chart {background:#232536;border-color:#ffffff24}.study-chart small {color:#d4ccf8}.study-chart div {margin:10px 0}.study-chart span {height:6px;display:block;border-radius:4px;background:linear-gradient(90deg,#ffffff13 25%,#b3a6fd 25%)}.study-chart div:nth-of-type(2) span {background:linear-gradient(90deg,#ffffff13 65%,#90c7bb 65%)}.study-chart footer {display:flex;gap:8px;align-items:center;color:#c4c3d1;font-size:11px}.study-chart i {height:1px;background:#ffffff44;flex:1}
+.k7-feature {display:grid;grid-template-columns:1.12fr 1fr;background:#141518;border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:35px}
+.k7-copy {padding:clamp(24px,4vw,58px)}.k7-copy h3 {font-size:clamp(26px,3vw,40px);line-height:1.15;margin-bottom:20px}.k7-copy p+p {margin-top:12px}.k7-logo {background:white;border-radius:6px;padding:9px 12px;width:185px;margin-bottom:30px}
+.archive {padding-block:clamp(52px,7vw,95px)}.archive-heading h1 {margin-bottom:16px}.archive-heading>p:last-child {font-size:1.18rem;max-width:580px}
+.archive-index {display:flex;gap:10px;flex-wrap:wrap;margin:32px 0 60px}.archive-index a {border:1px solid var(--line);border-radius:32px;padding:8px 16px;font-size:.95rem}.archive-index a:hover {background:#232329}
+.archive-group {margin-top:64px}.archive-group>h2 {margin-bottom:26px}.archive-entry {display:grid;grid-template-columns:minmax(180px,1fr) 2fr;gap:18px 7%;border-top:1px solid var(--line);padding:30px 0;scroll-margin-top:16px}.archive-entry .stack {color:#a6b9d7;font-size:.9rem;margin-top:12px}.archive-entry .text-link {margin-top:15px}
+.architect-note {padding:24px 28px;background:#1c1c25;border-left:3px solid #a5a5d6;margin:0 0 24px}.architect-note h3 {margin-bottom:8px}
+.readme-gallery,.reel-shot {grid-column:1/-1}.readme-gallery {display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:8px}.archive figure {margin:0}.archive figure img {border-radius:8px;width:100%;border:1px solid var(--line)}.archive figcaption {font-size:.87rem;color:#b8b7c2;margin-top:6px}.reel-shot {max-width:860px}
+@media(max-width:900px){.featured-grid{gap:12px}.feature-copy{padding:18px}.feature-art{padding-inline:10px}.readme-gallery{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.featured-grid,.k7-feature,.archive-entry{grid-template-columns:1fr}.feature-art{height:205px}.k7-art{min-height:215px}.header nav>a:nth-child(3){display:inline-block}.header nav{flex-wrap:wrap;justify-content:flex-end;gap:10px}.header{gap:14px}.header .nav-contact{display:none}.readme-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-index{margin-bottom:38px}.archive-group{margin-top:44px}}
+
+.arena-screen {background:#172426;padding:18px}.arena-screen img {border:1px solid #ffffff29;border-radius:5px;box-shadow:0 10px 22px #0006}.arena-gallery {grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:16px}.study-chart {width:min(100%,290px);padding:16px;border:1px solid #ffffff24;border-radius:9px;font:12px/1.6 Consolas,monospace}
+@media(max-width:700px){.arena-gallery{grid-template-columns:1fr}}
+
+/* HR review pass: single-column K7 card, education, achievements, closing CTA. */
+.k7-feature{grid-template-columns:1fr}.k7-copy>p:not(.eyebrow){max-width:760px}
+.timeline-item{grid-template-columns:1fr 2.2fr}
+.education,.achievements{border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1.2fr;gap:80px;padding-top:90px;padding-bottom:90px}
+.edu-card h3{font-size:25px;margin-bottom:6px}.edu-school{color:#aaaab5;font-size:17px;font-weight:650;margin-bottom:10px}.edu-main p:last-child{color:#b4b4bd;font-size:17px;margin:0}
+.edu-facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 48px;margin:30px 0 0;padding-top:24px;border-top:1px solid var(--line)}
+.edu-facts dt{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#aaaab5}.edu-facts dd{margin:6px 0 0;font-size:20px;font-weight:700}
+.achievement-list{list-style:none;margin:0;padding:0}.achievement-list li{display:flex;flex-direction:column;gap:4px;padding:18px 0;border-bottom:1px solid var(--line)}.achievement-list li:first-child{padding-top:0}
+.achievement-list strong{font:750 22px 'Manrope',Arial,sans-serif}.achievement-list span{color:#b4b4bd;font-size:16px}
+.reel-shot{max-width:560px}
+.archive-cta{margin-top:90px;padding:48px;border:1px solid #ffffff1c;border-radius:22px;background:radial-gradient(ellipse at 95% 15%,#303037 0%,#1a1a1e 45%,#131315 100%)}
+.archive-cta h2{margin-bottom:14px}.archive-cta p{color:#bdbdc6;font-size:17px;margin-bottom:26px}
+@media(max-width:700px){
+  .timeline-item{grid-template-columns:1fr}
+  .education,.achievements{grid-template-columns:1fr;gap:25px;padding-top:60px;padding-bottom:60px}
+  .edu-facts{grid-template-columns:1fr 1fr;gap:18px 30px}
+  .achievement-list strong{font-size:19px}
+  .archive-cta{padding:30px 22px;margin-top:60px}
+  .header nav>a:nth-child(1),.header nav>a:nth-child(3){display:none}
+  .header .nav-contact{display:inline-flex}
+}
