@@ -199,7 +199,7 @@ a:focus-visible,button:focus-visible{outline-color:#a8c7ff}
 .archive-index {display:flex;gap:10px;flex-wrap:wrap;margin:32px 0 60px}.archive-index a {border:1px solid var(--line);border-radius:32px;padding:8px 16px;font-size:.95rem}.archive-index a:hover {background:#232329}
 .archive-group {margin-top:64px}.archive-group>h2 {margin-bottom:26px}.archive-entry {display:grid;grid-template-columns:minmax(180px,1fr) 2fr;gap:18px 7%;border-top:1px solid var(--line);padding:30px 0;scroll-margin-top:16px}.archive-entry .stack {color:#a6b9d7;font-size:.9rem;margin-top:12px}.archive-entry .text-link {margin-top:15px}
 .architect-note {padding:24px 28px;background:#1c1c25;border-left:3px solid #a5a5d6;margin:0 0 24px}.architect-note h3 {margin-bottom:8px}
-.readme-gallery,.reel-shot {grid-column:1/-1}.readme-gallery {display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:8px}.archive figure {margin:0}.archive figure img {border-radius:8px;width:100%;border:1px solid var(--line)}.archive figcaption {font-size:.87rem;color:#b8b7c2;margin-top:6px}.reel-shot {max-width:860px}
+.readme-gallery {grid-column:1/-1}.readme-gallery {display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:8px}.archive figure {margin:0}.archive figure img {border-radius:8px;width:100%;height:auto;border:1px solid var(--line)}.archive figcaption {font-size:.87rem;color:#b8b7c2;margin-top:6px}
 @media(max-width:900px){.featured-grid{gap:12px}.feature-copy{padding:18px}.feature-art{padding-inline:10px}.readme-gallery{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){.featured-grid,.k7-feature,.archive-entry{grid-template-columns:1fr}.feature-art{height:205px}.k7-art{min-height:215px}.header nav>a:nth-child(3){display:inline-block}.header nav{flex-wrap:wrap;justify-content:flex-end;gap:10px}.header{gap:14px}.header .nav-contact{display:none}.readme-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.archive-index{margin-bottom:38px}.archive-group{margin-top:44px}}
 
@@ -215,7 +215,8 @@ a:focus-visible,button:focus-visible{outline-color:#a8c7ff}
 .edu-facts dt{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#aaaab5}.edu-facts dd{margin:6px 0 0;font-size:20px;font-weight:700}
 .achievement-list{list-style:none;margin:0;padding:0}.achievement-list li{display:flex;flex-direction:column;gap:4px;padding:18px 0;border-bottom:1px solid var(--line)}.achievement-list li:first-child{padding-top:0}
 .achievement-list strong{font:750 22px 'Manrope',Arial,sans-serif}.achievement-list span{color:#b4b4bd;font-size:16px}
-.reel-shot{max-width:560px}
+.reel-shot{grid-column:2;width:100%}
+@media(max-width:700px){.reel-shot{grid-column:1}}
 .archive-cta{margin-top:90px;padding:48px;border:1px solid #ffffff1c;border-radius:22px;background:radial-gradient(ellipse at 95% 15%,#303037 0%,#1a1a1e 45%,#131315 100%)}
 .archive-cta h2{margin-bottom:14px}.archive-cta p{color:#bdbdc6;font-size:17px;margin-bottom:26px}
 @media(max-width:700px){
